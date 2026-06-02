@@ -1,0 +1,29 @@
+.hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 6rem 2rem;
+}
+
+.hero h1 {
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+}
+
+.hero-tagline {
+    font-size: 1.25rem;
+    color: var(--color-accent);
+    margin-bottom: 2rem;
+}
+
+.hero-cta {
+    background-color: var(--color-accent);
+    color: var(--color-text-dark);
+    text-decoration: none;
+    padding: 0.75rem 2rem;
+    border: none;
+    border-radius: 4px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}

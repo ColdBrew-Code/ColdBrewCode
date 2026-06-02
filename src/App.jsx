@@ -1,14 +1,17 @@
-import Navbar from "./components/Navbar"; // import the Navbar component
+import Navbar from "./components/Navbar";
+import Hero from "./components/Hero";
+import About from "./components/About";
 
 function App() {
   return (
     <div>
       <Navbar />
       <main>
-        <h1>Welcome to Cold Brew Code!</h1>
+        <Hero />
+        <About />
       </main>
     </div>
   );
 }
 
-export default App; // makes this component available to import elsewhere
+export default App;

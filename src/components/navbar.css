@@ -19,11 +19,11 @@ nav {
 }
 
 .nav-link:hover {
-    color: var(--color-accent);
+    color: var(--color-bg);
 }
 
 .nav-brand {
-    color: var(--color-text);
+    color: var(--color-text-dark);
     font-size: 1.5rem;
     font-weight: bold;
 }

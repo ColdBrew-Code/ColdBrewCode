@@ -2,11 +2,11 @@
 
 :root {
   /* Colors */
-  --color-bg: #1a1a2e;
-  --color-surface: #16213e;
-  --color-accent: #a8d8ea;
-  --color-text: #e0e0e0;
-  --color-text-dark: #1a1a2e;
+  --color-bg: #f0daae;
+  --color-surface: #895d2b;
+  --color-accent: #90553c;
+  --color-text: #482e1d;
+  --color-text-dark: #25180f;
 
   /* Fonts */
   --font-base: sans-serif;
