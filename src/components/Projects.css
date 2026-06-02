@@ -61,18 +61,44 @@
 }
 
 .project-link {
-    align-self: flex-start;
+    display: inline-block;
+    margin-top: auto;
+    background-color: transparent;
     color: var(--color-accent);
-    font-weight: 700;
     text-decoration: none;
+    padding: 0.85rem 2.5rem;
+    border: 2px solid var(--color-accent);
+    border-radius: 2px;
+    font-weight: 700;
     font-size: 0.85rem;
-    letter-spacing: 0.08em;
+    letter-spacing: 0.12em;
     text-transform: uppercase;
-    transition: color 0.2s ease;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .project-link:hover {
-    color: var(--color-accent-light);
+    background-color: var(--color-accent);
+    color: var(--color-text-dark);
+}
+
+@media (min-width: 1400px) {
+    .projects {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        box-sizing: border-box;
+    }
+
+    .projects-grid {
+        flex: 0 0 50%;
+        max-width: 100%;
+        min-height: 0;
+    }
+
+    .project-card {
+        flex: 1 1 calc(50% - 1rem);
+        max-width: calc(50% - 1rem);
+    }
 }
 
 @media (max-width: 768px) {
