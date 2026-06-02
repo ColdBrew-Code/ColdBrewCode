@@ -1,6 +1,5 @@
 import "./Projects.css";
 
-// replace these with your real projects when ready
 const projects = [
   {
     title: "Project One",
@@ -23,6 +22,7 @@ function Projects() {
   return (
     <section id="projects" className="projects">
       <h2 className="projects-title">Our Work</h2>
+      <div className="projects-rule" />
       <div className="projects-grid">
         {projects.map((project) => (
           <div key={project.title} className="project-card">

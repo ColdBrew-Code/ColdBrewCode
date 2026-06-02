@@ -2,14 +2,19 @@
 
 :root {
   /* Colors */
-  --color-bg: #f0daae;
-  --color-surface: #895d2b;
-  --color-accent: #90553c;
-  --color-text: #2c1d12;
-  --color-text-dark: #25180f;
+  --color-bg: #141a13;
+  --color-surface: #1c2419;
+  --color-surface-raised: #283422;
+  --color-accent: #8aac78;
+  --color-accent-light: #adc49d;
+  --color-text: #f0ece0;
+  --color-text-muted: #8a9480;
+  --color-text-dark: #141a13;
+  --color-border: #2d3d28;
 
   /* Fonts */
-  --font-base: sans-serif;
+  --font-base: 'Lato', sans-serif;
+  --font-heading: 'Fredericka the Great', serif;
   --font-size-base: 1rem;
 }
 
@@ -26,8 +31,7 @@ body {
   font-size: var(--font-size-base);
 }
 
-/* Main Content */
-main {
-    padding: 2rem;
-    text-align: center;
+h1, h2, h3 {
+    font-family: var(--font-heading);
+    font-weight: 400;
 }

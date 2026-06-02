@@ -1,43 +1,76 @@
-.team{
-    padding: 5rem 2rem;
+.team {
+    background-image: linear-gradient(rgba(20, 26, 19, 0.96), rgba(20, 26, 19, 0.96)), url('/chalkboard.jpg');
+    background-size: cover;
+    padding: 6rem 2rem;
     text-align: center;
 }
 
-.team-title{
-    font-size: 2rem;
-    margin-bottom: 3rem;
-    color: var(--color-accent);
+.team-title {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: var(--color-text);
 }
 
-.team-members{
+.team-rule {
+    width: 40px;
+    height: 2px;
+    background-color: var(--color-accent);
+    margin: 0 auto 3rem;
+}
+
+.team-members {
     display: flex;
     justify-content: center;
-    gap: 3rem;
+    gap: 2rem;
     flex-wrap: wrap;
+    max-width: 900px;
+    margin: 0 auto;
 }
 
-.team-member{
+.team-member {
     max-width: 340px;
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 0.75rem;
-    background-color: var(--color-surface);
-    padding: 2rem;
-    border-radius: 8px;
+    background-color: var(--color-surface-raised);
+    border: 1px solid var(--color-border);
+    padding: 2.5rem 2rem;
+    border-radius: 4px;
+    box-shadow: 0 4px 24px rgba(0, 0, 0, 0.5);
+    transition: transform 0.25s ease, border-color 0.25s ease;
 }
 
-.team-member-name{
+.team-member:hover {
+    transform: translateY(-5px);
+    border-color: var(--color-accent);
+}
+
+.team-member-name {
     font-size: 1.2rem;
-}
-
-.team-member-role{
-    font-size: 0.95rem;
-    color: var(--color-accent);
-}
-
-.team-member-bio{
-    font-size: 0.9rem;
-    line-height: 1.7;
     color: var(--color-text);
+}
+
+.team-member-role {
+    font-size: 0.8rem;
+    color: var(--color-accent);
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+}
+
+.team-member-bio {
+    font-size: 0.9rem;
+    line-height: 1.8;
+    color: var(--color-text-muted);
+}
+
+@media (max-width: 768px) {
+    .team {
+        padding: 4rem 1.5rem;
+    }
+
+    .team-member {
+        max-width: 100%;
+        width: 100%;
+    }
 }
