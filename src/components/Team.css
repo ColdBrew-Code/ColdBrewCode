@@ -64,6 +64,27 @@
     color: var(--color-text-muted);
 }
 
+.team-member-portfolio {
+    display: inline-block;
+    margin-top: auto;
+    background-color: transparent;
+    color: var(--color-accent);
+    text-decoration: none;
+    padding: 0.85rem 2.5rem;
+    border: 2px solid var(--color-accent);
+    border-radius: 2px;
+    font-weight: 700;
+    font-size: 0.85rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.team-member-portfolio:hover {
+    background-color: var(--color-accent);
+    color: var(--color-text-dark);
+}
+
 @media (max-width: 768px) {
     .team {
         padding: 4rem 1.5rem;

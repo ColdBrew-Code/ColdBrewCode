@@ -2,18 +2,13 @@ import "./Projects.css";
 
 const projects = [
   {
-    title: "Project One",
-    description: "A short description of what this project does and the technologies used.",
+    title: "Executive Coach Builders",
+    description: "Built as a capstone project at OTC, this site for Executive Coach Builders features a custom client portal — giving the ECB team full control over their inventory and site content without touching a line of code.",
     link: "#",
   },
   {
-    title: "Project Two",
-    description: "A short description of what this project does and the technologies used.",
-    link: "#",
-  },
-  {
-    title: "Project Three",
-    description: "A short description of what this project does and the technologies used.",
+    title: "Demo Store",
+    description: "A full-featured e-commerce concept showcasing what ColdBrew can build. It includes a modern storefront design, customizable product listings, and a dashboard for managing form submissions — ready to be tailored for any client.",
     link: "#",
   },
 ];
