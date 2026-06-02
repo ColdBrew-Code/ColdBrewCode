@@ -1,0 +1,43 @@
+.team{
+    padding: 5rem 2rem;
+    text-align: center;
+}
+
+.team-title{
+    font-size: 2rem;
+    margin-bottom: 3rem;
+    color: var(--color-accent);
+}
+
+.team-members{
+    display: flex;
+    justify-content: center;
+    gap: 3rem;
+    flex-wrap: wrap;
+}
+
+.team-member{
+    max-width: 340px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
+    background-color: var(--color-surface);
+    padding: 2rem;
+    border-radius: 8px;
+}
+
+.team-member-name{
+    font-size: 1.2rem;
+}
+
+.team-member-role{
+    font-size: 0.95rem;
+    color: var(--color-accent);
+}
+
+.team-member-bio{
+    font-size: 0.9rem;
+    line-height: 1.7;
+    color: var(--color-text);
+}
