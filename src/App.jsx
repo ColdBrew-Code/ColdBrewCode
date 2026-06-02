@@ -5,6 +5,7 @@ import About from "./components/About";
 import Team from "./components/Team";
 import Projects from "./components/Projects";
 import Footer from "./components/Footer";
+import Contact from "./components/Contact";
 
 const scrollSection = (direction) => {
   const container = document.querySelector('.scroll-container')
@@ -35,6 +36,7 @@ function App() {
         <About />
         <Team />
         <Projects />
+        <Contact />
       </div>
       <Footer />
       <button className="scroll-arrow scroll-arrow--left"  onClick={() => scrollSection(-1)}><img src="/chalk_arrow.png" alt="scroll left" /></button>
