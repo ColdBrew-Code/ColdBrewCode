@@ -1,0 +1,29 @@
+nav {
+    background-color: var(--color-surface);
+    display: flex;
+    justify-content: space-between;
+    padding : 1rem 2rem;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    list-style: none;
+}
+
+.nav-link {
+    color: var(--color-text);
+    text-decoration: none;
+    margin: 0 1rem;
+    font-weight: bold;
+}
+
+.nav-link:hover {
+    color: var(--color-accent);
+}
+
+.nav-brand {
+    color: var(--color-text);
+    font-size: 1.5rem;
+    font-weight: bold;
+}
