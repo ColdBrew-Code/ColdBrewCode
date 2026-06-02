@@ -27,6 +27,12 @@
     font-size: 1.1rem;
     line-height: 1.9;
     color: var(--color-text-muted);
+    text-align: left;
+    margin-bottom: 1.25rem;
+}
+
+.about p:last-child {
+    margin-bottom: 0;
 }
 
 @media (max-width: 768px) {
