@@ -76,8 +76,27 @@
     border-color: var(--color-accent);
 }
 
+/* Image wrapper uses aspect-ratio so it scales with card width */
 .card-image-wrapper {
     width: 100%;
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+    border-radius: 2px;
+    border: 2px solid var(--color-accent);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.5);
+}
+
+.card-image-wrapper a {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.project-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
 }
 
 .card-content {
@@ -92,27 +111,25 @@
     color: var(--color-text);
     font-family: var(--font-heading);
     font-weight: 400;
-}
-
-.project-image {
-    width: 100%;
-    height: auto;
-    border-radius: 2px;
-    border: 2px solid var(--color-accent);
-    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.5);
-    display: block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 
 .project-description {
     font-size: 0.9rem;
     line-height: 1.8;
     color: var(--color-text-muted);
-    flex: 1;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
 }
 
 .project-link {
     display: inline-block;
     align-self: flex-start;
+    margin-top: auto;
     background-color: transparent;
     color: var(--color-accent);
     text-decoration: none;
@@ -160,7 +177,7 @@
     background-color: var(--color-accent);
 }
 
-/* --- Wide screen: horizontal card layout, arrows move to bottom --- */
+/* --- Wide screen: horizontal card, arrows at bottom --- */
 @media (min-width: 1400px) {
     .projects {
         display: flex;
@@ -181,14 +198,29 @@
         flex-direction: row;
         gap: 2rem;
         align-items: stretch;
+        height: 340px;
+        box-sizing: border-box;
     }
 
+    /* Override aspect-ratio — wrapper fills card height via flex stretch */
     .card-image-wrapper {
         flex: 0 0 55%;
+        aspect-ratio: unset;
+        width: auto;
+        height: 100%;
+    }
+
+    .card-image-wrapper a {
+        height: 100%;
     }
 
     .card-content {
         justify-content: flex-start;
+    }
+
+    /* Allow more lines to show in the wider layout */
+    .project-description {
+        -webkit-line-clamp: 5;
     }
 
     /* Swap: hide side arrows, show bottom arrows */
