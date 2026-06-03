@@ -6,7 +6,9 @@ function Navbar() {
 
     return (
         <nav>
-            <span className="nav-brand">Cold Brew Code</span>
+            <a className="nav-brand" href="#">
+                <img src="/cb-logo.png" alt="Cold Brew Code" className="nav-logo" />
+            </a>
             <button
                 className="nav-toggle"
                 onClick={() => setMenuOpen(!menuOpen)}
