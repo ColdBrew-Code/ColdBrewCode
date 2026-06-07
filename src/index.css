@@ -31,6 +31,33 @@ body {
   font-size: var(--font-size-base);
 }
 
+/* Skip to main content link */
+.skip-link {
+  position: absolute;
+  left: -999px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+.skip-link:focus, .skip-link:active {
+  left: 1rem;
+  top: 1rem;
+  width: auto;
+  height: auto;
+  padding: 0.5rem 1rem;
+  background: var(--color-accent);
+  color: var(--color-text-dark);
+  z-index: 9999;
+  border-radius: 4px;
+}
+
+/* Visible focus indicator for keyboard users */
+a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible {
+  outline: 3px solid var(--color-accent-light);
+  outline-offset: 2px;
+}
+
 h1, h2, h3 {
     font-family: var(--font-heading);
     font-weight: 400;

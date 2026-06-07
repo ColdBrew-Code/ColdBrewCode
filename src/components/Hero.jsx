@@ -178,22 +178,22 @@ $ uptime --check
 `;
 
 function Hero() {
-    return(
-        <section className="hero">
+  return(
+    <section className="hero" aria-labelledby="hero-title">
 
-            <pre className="chalk-terminal-bg">
-                {terminalText.repeat(3)}
-            </pre>
+      <pre className="chalk-terminal-bg" aria-hidden="true" role="presentation" tabIndex="-1">
+        {terminalText.repeat(3)}
+      </pre>
 
-            <div className="hero-content">
-                <h1 className="hero-title">Cold Brew Code</h1>
-                <div className="hero-divider" />
-                <p className="hero-tagline">Freelance software development, brewed fresh.</p>
-                <a href="#about" className="hero-cta">Learn More</a>
-            </div>
+      <div className="hero-content">
+        <h1 id="hero-title" className="hero-title">Cold Brew Code</h1>
+        <div className="hero-divider" />
+        <p className="hero-tagline">Freelance software development, brewed fresh.</p>
+        <a href="#about" className="hero-cta" aria-label="Learn more about Cold Brew Code">Learn More</a>
+      </div>
 
-        </section>
-    );
+    </section>
+  );
 }
 
 export default Hero;

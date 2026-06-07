@@ -31,16 +31,20 @@ function App() {
   return (
     <div className="app-wrapper">   {/* give the wrapper a class */}
       <Navbar />
-      <div className="scroll-container">
+      <main id="main" role="main" aria-label="Primary content" className="scroll-container">
         <Hero />
         <About />
         <Team />
         <Projects />
         <Contact />
-      </div>
+      </main>
       <Footer />
-      <button className="scroll-arrow scroll-arrow--left"  onClick={() => scrollSection(-1)}><img src="/chalk_arrow.png" alt="scroll left" /></button>
-      <button className="scroll-arrow scroll-arrow--right" onClick={() => scrollSection( 1)}><img src="/chalk_arrow.png" alt="scroll right" /></button>
+      <button className="scroll-arrow scroll-arrow--left" aria-label="Scroll left" onClick={() => scrollSection(-1)}>
+        <img src="/chalk_arrow.png" alt="Scroll left" />
+      </button>
+      <button className="scroll-arrow scroll-arrow--right" aria-label="Scroll right" onClick={() => scrollSection( 1)}>
+        <img src="/chalk_arrow.png" alt="Scroll right" />
+      </button>
     </div>
   );
 }

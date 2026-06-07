@@ -30,7 +30,7 @@ function Projects() {
       <div className="projects-rule" />
       <div className="projects-carousel">
         <button className="carousel-arrow carousel-arrow--prev side-only" onClick={prev} aria-label="Previous project">
-          <img src="./chalk_arrow.png" alt="" />
+          <img src="./chalk_arrow.png" alt="" role="presentation" aria-hidden="true" />
         </button>
         <div className="project-card">
           <div className="card-image-wrapper">
@@ -47,12 +47,12 @@ function Projects() {
           </div>
         </div>
         <button className="carousel-arrow carousel-arrow--next side-only" onClick={next} aria-label="Next project">
-          <img src="./chalk_arrow.png" alt="" />
+          <img src="./chalk_arrow.png" alt="" role="presentation" aria-hidden="true" />
         </button>
       </div>
       <div className="carousel-nav">
         <button className="carousel-arrow carousel-arrow--prev wide-only" onClick={prev} aria-label="Previous project">
-          <img src="./chalk_arrow.png" alt="" />
+          <img src="./chalk_arrow.png" alt="" role="presentation" aria-hidden="true" />
         </button>
         <div className="carousel-dots">
           {projects.map((_, i) => (
@@ -65,7 +65,7 @@ function Projects() {
           ))}
         </div>
         <button className="carousel-arrow carousel-arrow--next wide-only" onClick={next} aria-label="Next project">
-          <img src="./chalk_arrow.png" alt="" />
+          <img src="./chalk_arrow.png" alt="" role="presentation" aria-hidden="true" />
         </button>
       </div>
     </section>
