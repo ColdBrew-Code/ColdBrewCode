@@ -5,8 +5,8 @@ function Header() {
     const [menuOpen, setMenuOpen] = useState(false);
 
     return (
-        <header aria-role="banner">
-            <nav>
+        <header aria-role="banner" className="header">
+            <nav aria-label="Main navigation">
                 <a className="nav-brand" href="#">
                     <img src="/cb-logo.png" alt="Cold Brew Code" className="nav-logo" />
                 </a>
