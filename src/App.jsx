@@ -63,7 +63,7 @@ function App() {
         disabled={atStart}
         tabIndex={atStart ? -1 : 0}
       >
-        <img src="/chalk_arrow.png" alt="Scroll left" />
+        <img src="/chalk_arrow.webp" alt="Scroll left" />
       </button>
       <button
         className="scroll-arrow scroll-arrow--right"
@@ -73,7 +73,7 @@ function App() {
         disabled={atEnd}
         tabIndex={atEnd ? -1 : 0}
       >
-        <img src="/chalk_arrow.png" alt="Scroll right" />
+        <img src="/chalk_arrow.webp" alt="Scroll right" />
       </button>
       <Footer />
     </div>

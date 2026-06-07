@@ -8,7 +8,7 @@
     min-height: 85vh;
     max-width: 2200px;
     padding: 6rem 2rem;
-    background-image: linear-gradient(rgba(20, 26, 19, 0.35), rgba(20, 26, 19, 0.35)), url('/chalkboard.jpg');
+    background-image: linear-gradient(rgba(20, 26, 19, 0.35), rgba(20, 26, 19, 0.35)), url('/chalkboard.webp');
     background-size: cover;
     background-position: center;
     overflow: hidden;
@@ -105,7 +105,7 @@
         min-height: 800px;
         max-height: 800px;
         padding: 4rem 1.5rem;
-        background-image: linear-gradient(rgba(20, 26, 19, 0.45), rgba(20, 26, 19, 0.45)), url('/chalkboard.jpg');
+        background-image: linear-gradient(rgba(20, 26, 19, 0.45), rgba(20, 26, 19, 0.45)), url('/chalkboard.webp');
     }
 
     .chalk-terminal-bg {
