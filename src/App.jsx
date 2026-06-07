@@ -1,5 +1,5 @@
 import { useEffect } from "react"
-import Navbar from "./components/Navbar";
+import Header from "./components/Header";
 import Hero from "./components/Hero";
 import About from "./components/About";
 import Team from "./components/Team";
@@ -30,7 +30,7 @@ function App() {
 
   return (
     <div className="app-wrapper">   {/* give the wrapper a class */}
-      <Navbar />
+      <Header />
       <main id="main" role="main" aria-label="Primary content" className="scroll-container">
         <Hero />
         <About />
