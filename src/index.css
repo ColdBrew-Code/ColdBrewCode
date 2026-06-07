@@ -112,6 +112,11 @@ h1, h2, h3 {
     transition: opacity 0.2s ease;
   }
 
+  .scroll-arrow[disabled] {
+    opacity: 0.25;
+    pointer-events: none;
+  }
+
   .scroll-arrow img {
     width: 48px;
     height: auto;
