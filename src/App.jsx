@@ -28,7 +28,8 @@ function App() {
     }
 
     const handleWheel = (e) => {
-      if (window.innerWidth < 1400) return
+      const isHorizontalScrollMode = getComputedStyle(container).overflowX === 'scroll'
+      if (!isHorizontalScrollMode) return
       e.preventDefault()
       container.scrollLeft += e.deltaY  // continuous, smooth — snap-type handles settling
     }
