@@ -38,6 +38,18 @@ function App() {
     container.scrollTo({ left: target * childWidth, behavior: 'smooth' })
   }, [])
 
+  const handleNavigateToSection = useCallback((targetIndex) => {
+    const container = containerRef.current
+    if (!container) return false
+
+    if (container.scrollWidth > container.clientWidth) {
+      scrollToSection(targetIndex)
+      return true
+    }
+
+    return false
+  }, [scrollToSection])
+
   // Programmatic scroll to the next/previous section.
   // `direction` is -1 for left, +1 for right.
   const scrollSection = useCallback((direction) => {
@@ -114,7 +126,10 @@ function App() {
 
   return (
     <div className="app-wrapper">
-      <Header onBrandClick={() => scrollToSection(0)} />
+      <Header
+        onBrandClick={() => scrollToSection(0)}
+        onNavigateToSection={handleNavigateToSection}
+      />
       <main id="main" role="main" aria-label="Primary content" ref={containerRef} className="scroll-container">
         <Hero />
         <About />
