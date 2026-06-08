@@ -30,6 +30,7 @@
     line-height: 1.9;
     color: var(--color-text-muted);
     margin-bottom: 2.5rem;
+    text-align: start;
 }
 
 .btn--primary {
