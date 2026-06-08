@@ -84,6 +84,7 @@ h1, h2, h3 {
     overflow-y: hidden;
     scroll-snap-type: x mandatory;
     scrollbar-width: none;
+    touch-action: pan-y;
   }
 
   .scroll-container::-webkit-scrollbar {

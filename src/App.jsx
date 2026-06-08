@@ -1,4 +1,5 @@
-import { useEffect, useState } from "react"
+import { useEffect, useState, useRef, useCallback } from "react"
+import './App.css'
 import Header from "./components/Header";
 import Hero from "./components/Hero";
 import About from "./components/About";
@@ -7,31 +8,108 @@ import Projects from "./components/Projects";
 import Footer from "./components/Footer";
 import Contact from "./components/Contact";
 
-const scrollSection = (direction) => {
-  const container = document.querySelector('.scroll-container')
-  if (!container) return
-  container.scrollBy({ left: direction * window.innerWidth * 0.5, behavior: 'smooth' })
-}
-
 function App() {
+
+  // Reference to the scrolling container that holds the site sections
+  const containerRef = useRef(null)
+
+  // State flags used to enable/disable the left/right arrow buttons
   const [atStart, setAtStart] = useState(true)
   const [atEnd, setAtEnd] = useState(false)
 
-  useEffect(() => {
-    const container = document.querySelector('.scroll-container')
+  // Throttle flag to avoid handling many wheel events while animating
+  const isThrottled = useRef(false)
+
+  // Keeps the current visible child index (not state because we don't need re-renders)
+  const currentIndex = useRef(0)
+
+  // Programmatic scroll to a specific section index.
+  const scrollToSection = useCallback((targetIndex) => {
+    const container = containerRef.current
     if (!container) return
 
-    const checkArrows = () => {
-      const { scrollLeft, scrollWidth, clientWidth } = container
-      setAtStart(scrollLeft <= 5)
-      setAtEnd(scrollLeft + clientWidth >= scrollWidth - 5)
+    // Calculate width of one child (fallback to container width)
+    const childWidth = container.children[0]?.clientWidth || container.clientWidth
+
+    // Clamp target index within available children
+    const target = Math.min(Math.max(targetIndex, 0), container.children.length - 1)
+
+    // Smooth scroll to target child
+    container.scrollTo({ left: target * childWidth, behavior: 'smooth' })
+  }, [])
+
+  const handleNavigateToSection = useCallback((targetIndex) => {
+    const container = containerRef.current
+    if (!container) return false
+
+    if (container.scrollWidth > container.clientWidth) {
+      scrollToSection(targetIndex)
+      return true
     }
 
+    return false
+  }, [scrollToSection])
+
+  // Programmatic scroll to the next/previous section.
+  // `direction` is -1 for left, +1 for right.
+  const scrollSection = useCallback((direction) => {
+    const container = containerRef.current
+    if (!container) return
+
+    const childWidth = container.children[0]?.clientWidth || container.clientWidth
+    const current = Math.round(container.scrollLeft / childWidth)
+
+    scrollToSection(current + direction)
+  }, [scrollToSection])
+
+  // Check scroll position and update arrow visibility/state.
+  const checkArrows = useCallback(() => {
+    const container = containerRef.current
+    if (!container) return
+
+    // Read scroll metrics
+    const { scrollLeft, scrollWidth, clientWidth } = container
+    const childWidth = container.children[0]?.clientWidth || clientWidth
+
+    // Slight tolerance to avoid jitter near the edges
+    setAtStart(scrollLeft <= 5)
+    setAtEnd(scrollLeft + clientWidth >= scrollWidth - 5)
+
+    // Update the current index for other logic (no re-render)
+    currentIndex.current = Math.round(scrollLeft / childWidth)
+  }, [])
+
+  useEffect(() => {
+    const container = containerRef.current
+    if (!container) return
+
     const handleWheel = (e) => {
-      const isHorizontalScrollMode = getComputedStyle(container).overflowX === 'scroll'
+
+      // Only enable scrolling when content overflows horizontally
+      const isHorizontalScrollMode = container.scrollWidth > container.clientWidth
       if (!isHorizontalScrollMode) return
+
+      // Ignore additional wheel events while animating
+      if (isThrottled.current) return
+
+      const delta = e.deltaY
+      const width = container.children[0]?.clientWidth || container.clientWidth
+      const childrenCount = container.children.length
+      const idx = Math.round(container.scrollLeft / width)
+      let target = idx
+
+      // Move one section left or right depending on wheel direction
+      if (delta > 0) target = Math.min(idx + 1, childrenCount - 1)
+      else if (delta < 0) target = Math.max(idx - 1, 0)
+      if (target === idx) return
+
+      // Prevent the page from also scrolling vertically while handling horizontal navigation
       e.preventDefault()
-      container.scrollLeft += e.deltaY  // continuous, smooth — snap-type handles settling
+      isThrottled.current = true
+      container.scrollTo({ left: target * width, behavior: 'smooth' })
+
+      // Allow wheel scroll after the animation completes
+      setTimeout(() => { isThrottled.current = false }, 700)
     }
 
     checkArrows()
@@ -44,12 +122,15 @@ function App() {
       container.removeEventListener('scroll', checkArrows)
       window.removeEventListener('resize', checkArrows)
     }
-  }, [])
+  }, [checkArrows])
 
   return (
-    <div className="app-wrapper">   {/* give the wrapper a class */}
-      <Header />
-      <main id="main" role="main" aria-label="Primary content" className="scroll-container">
+    <div className="app-wrapper">
+      <Header
+        onBrandClick={() => scrollToSection(0)}
+        onNavigateToSection={handleNavigateToSection}
+      />
+      <main id="main" role="main" aria-label="Primary content" ref={containerRef} className="scroll-container">
         <Hero />
         <About />
         <Team />
@@ -78,7 +159,7 @@ function App() {
       </button>
       <Footer />
     </div>
-  );
+  )
 }
 
 export default App;

@@ -1,13 +1,28 @@
 import { useState } from "react";
 import "./Header.css";
 
-function Header() {
+function Header({ onBrandClick, onNavigateToSection }) {
     const [menuOpen, setMenuOpen] = useState(false);
+
+    const handleSectionClick = (event, targetIndex) => {
+        const handled = onNavigateToSection?.(targetIndex);
+        setMenuOpen(false);
+
+        if (handled) {
+            event.preventDefault();
+        }
+    };
 
     return (
         <header aria-role="banner" className="header">
             <nav aria-label="Main navigation">
-                <a className="nav-brand" href="#">
+                <a
+                    className="nav-brand"
+                    href="#hero"
+                    onClick={() => {
+                        onBrandClick?.();
+                    }}
+                >
                     <img src="/cb-logo.png" alt="Cold Brew Code" className="nav-logo" />
                 </a>
                 <button
@@ -18,9 +33,9 @@ function Header() {
                     {menuOpen ? "✕" : "☰"}
                 </button>
                 <ul className={`nav-links${menuOpen ? " open" : ""}`}>
-                    <li><a href="#about" className="nav-link" onClick={() => setMenuOpen(false)}>About</a></li>
-                    <li><a href="#team" className="nav-link" onClick={() => setMenuOpen(false)}>Team</a></li>
-                    <li><a href="#projects" className="nav-link" onClick={() => setMenuOpen(false)}>Projects</a></li>
+                    <li><a href="#about" className="nav-link" onClick={(event) => handleSectionClick(event, 1)}>About</a></li>
+                    <li><a href="#team" className="nav-link" onClick={(event) => handleSectionClick(event, 2)}>Team</a></li>
+                    <li><a href="#projects" className="nav-link" onClick={(event) => handleSectionClick(event, 3)}>Projects</a></li>
                 </ul>
             </nav>
         </header>

@@ -1,0 +1,60 @@
+/* App wrapper uses normal document flow by default (mobile/desktop) */
+.app-wrapper {
+  display: block;
+}
+
+/* Apply horizontal two-up scroll layout and custom scrollbars only on ultrawide screens */
+@media (min-width: 1921px) {
+  .app-wrapper {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .scroll-container {
+    display: flex;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    scroll-behavior: smooth;
+    flex: 1;
+  }
+
+  .scroll-container > * {
+    scroll-snap-align: start;
+    flex: 0 0 50vw;
+    width: 50vw;
+    min-height: 100%;
+    box-sizing: border-box;
+  }
+
+  .scroll-container::-webkit-scrollbar { height: 8px }
+  .scroll-container { scrollbar-width: thin }
+
+  /* Custom scrollbar styling that matches site colors */
+  .scroll-container::-webkit-scrollbar { height: 10px }
+  .scroll-container::-webkit-scrollbar-track {
+    background: var(--color-surface);
+    border-radius: 999px;
+  }
+  .scroll-container::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, var(--color-accent-light), var(--color-accent));
+    border-radius: 999px;
+    border: 2px solid var(--color-surface);
+  }
+  .scroll-container:hover::-webkit-scrollbar-thumb { opacity: 1 }
+
+  .scroll-container > *::-webkit-scrollbar { width: 10px }
+  .scroll-container > *::-webkit-scrollbar-track { background: var(--color-surface) }
+  .scroll-container > *::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, var(--color-accent-light), var(--color-accent));
+    border-radius: 999px;
+    border: 2px solid var(--color-surface);
+  }
+
+  /* Firefox scrollbar colors */
+  .scroll-container { scrollbar-color: var(--color-accent) var(--color-surface) }
+  .scroll-container > * { scrollbar-color: var(--color-accent) var(--color-surface) }
+}
+
