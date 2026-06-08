@@ -179,7 +179,7 @@ $ uptime --check
 
 function Hero() {
   return(
-    <section className="hero" aria-labelledby="hero-title">
+    <section id="hero" className="hero" aria-labelledby="hero-title">
 
       <pre className="chalk-terminal-bg" aria-hidden="true" role="presentation" tabIndex="-1">
         {terminalText.repeat(3)}

@@ -23,24 +23,32 @@ function App() {
   // Keeps the current visible child index (not state because we don't need re-renders)
   const currentIndex = useRef(0)
 
-  // Programmatic scroll to the next/previous section.
-  // `direction` is -1 for left, +1 for right.
-  const scrollSection = useCallback((direction) => {
+  // Programmatic scroll to a specific section index.
+  const scrollToSection = useCallback((targetIndex) => {
     const container = containerRef.current
     if (!container) return
 
     // Calculate width of one child (fallback to container width)
     const childWidth = container.children[0]?.clientWidth || container.clientWidth
 
-    // Determine current child index based on scroll position
-    const current = Math.round(container.scrollLeft / childWidth)
-
     // Clamp target index within available children
-    const target = Math.min(Math.max(current + direction, 0), container.children.length - 1)
+    const target = Math.min(Math.max(targetIndex, 0), container.children.length - 1)
 
     // Smooth scroll to target child
     container.scrollTo({ left: target * childWidth, behavior: 'smooth' })
   }, [])
+
+  // Programmatic scroll to the next/previous section.
+  // `direction` is -1 for left, +1 for right.
+  const scrollSection = useCallback((direction) => {
+    const container = containerRef.current
+    if (!container) return
+
+    const childWidth = container.children[0]?.clientWidth || container.clientWidth
+    const current = Math.round(container.scrollLeft / childWidth)
+
+    scrollToSection(current + direction)
+  }, [scrollToSection])
 
   // Check scroll position and update arrow visibility/state.
   const checkArrows = useCallback(() => {
@@ -106,7 +114,7 @@ function App() {
 
   return (
     <div className="app-wrapper">
-      <Header />
+      <Header onBrandClick={() => scrollToSection(0)} />
       <main id="main" role="main" aria-label="Primary content" ref={containerRef} className="scroll-container">
         <Hero />
         <About />

@@ -1,13 +1,19 @@
 import { useState } from "react";
 import "./Header.css";
 
-function Header() {
+function Header({ onBrandClick }) {
     const [menuOpen, setMenuOpen] = useState(false);
 
     return (
         <header aria-role="banner" className="header">
             <nav aria-label="Main navigation">
-                <a className="nav-brand" href="#">
+                <a
+                    className="nav-brand"
+                    href="#hero"
+                    onClick={() => {
+                        onBrandClick?.();
+                    }}
+                >
                     <img src="/cb-logo.png" alt="Cold Brew Code" className="nav-logo" />
                 </a>
                 <button
