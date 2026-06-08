@@ -6,7 +6,6 @@
     justify-content: center;
     text-align: center;
     min-height: 85vh;
-    max-width: 2200px;
     padding: 6rem 2rem;
     background-image: linear-gradient(rgba(20, 26, 19, 0.35), rgba(20, 26, 19, 0.35)), url('/chalkboard.webp');
     background-size: cover;
