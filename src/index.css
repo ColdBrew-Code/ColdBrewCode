@@ -73,8 +73,6 @@ h1, h2, h3 {
     height: 100vh;
   }
 
-  main{
-  }
   .app-wrapper {
     max-height: 100vh;
     overflow-y: hidden;
