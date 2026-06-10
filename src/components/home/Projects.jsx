@@ -6,13 +6,13 @@ const projects = [
     title: "Executive Coach Builders",
     description: "Built as a capstone project at OTC, this site for Executive Coach Builders features a custom client portal — giving the ECB team full control over their inventory and site content without touching a line of code.",
     link: "https://executivecoachbuilders-production.up.railway.app/",
-    image: "./ecb.webp",
+    image: "./projects/ecb.webp",
   },
   {
     title: "Demo Store",
     description: "A full-featured e-commerce concept showcasing what ColdBrew can build. It includes a modern storefront design, customizable product listings, and a dashboard for managing form submissions — ready to be tailored for any client.",
     link: "https://web-demo.gravessoftware.dev/",
-    image: "./demo-store.webp",
+    image: "./projects/demo-store.webp",
   },
 ];
 
