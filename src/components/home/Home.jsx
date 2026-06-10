@@ -4,8 +4,8 @@ import About from "./About"
 import Team from "./Team"
 import Projects from "./Projects"
 import Contact from "./Contact"
-import Footer from "./Footer"
-import { defaultHeaderActions, useHeaderActions } from "./HeaderActionsContext"
+import Footer from "../Footer"
+import { defaultHeaderActions, useHeaderActions } from "../HeaderActionsContext"
 
 function Home() {
   const { setHeaderActions } = useHeaderActions()

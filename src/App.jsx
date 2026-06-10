@@ -1,6 +1,6 @@
 import { Routes, Route } from "react-router-dom"
 import './App.css'
-import Home from "./components/Home";
+import Home from "./components/home/Home";
 import PrivacyPolicy from "./components/PrivacyPolicy";
 import TermsOfService from "./components/TermsOfService";
 import Header from "./components/Header"
