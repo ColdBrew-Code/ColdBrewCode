@@ -1,8 +1,8 @@
 import { Routes, Route } from "react-router-dom"
 import './App.css'
 import Home from "./components/home/Home";
-import PrivacyPolicy from "./components/PrivacyPolicy";
-import TermsOfService from "./components/TermsOfService";
+import PrivacyPolicy from "./components/legal/PrivacyPolicy";
+import TermsOfService from "./components/legal/TermsOfService";
 import Header from "./components/Header"
 import { HeaderActionsProvider, useHeaderActions } from "./components/HeaderActionsContext"
 
