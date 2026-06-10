@@ -1,4 +1,5 @@
 import { useEffect, useState, useRef, useCallback } from "react"
+import { Routes, Route } from "react-router-dom"
 import './App.css'
 import Header from "./components/Header";
 import Hero from "./components/Hero";
@@ -7,6 +8,8 @@ import Team from "./components/Team";
 import Projects from "./components/Projects";
 import Footer from "./components/Footer";
 import Contact from "./components/Contact";
+import PrivacyPolicy from "./components/PrivacyPolicy";
+import TermsOfService from "./components/TermsOfService";
 
 function App() {
 
@@ -125,6 +128,10 @@ function App() {
   }, [checkArrows])
 
   return (
+  <Routes>
+    <Route path="/privacy" element={<PrivacyPolicy />} />
+    <Route path="/terms" element={<TermsOfService />} />
+    <Route path="/" element={
     <div className="app-wrapper">
       <Header
         onBrandClick={() => scrollToSection(0)}
@@ -159,7 +166,9 @@ function App() {
       </button>
       <Footer />
     </div>
-  )
+    } />
+  </Routes>
+)
 }
 
 export default App;
