@@ -25,6 +25,7 @@
     display: flex;
     gap: 1.5rem;
     justify-content: center;
+    border-bottom: none;
 }
 
 .footer-links a {
