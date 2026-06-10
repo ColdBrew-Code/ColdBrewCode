@@ -59,6 +59,7 @@ nav {
 }
 
 @media (max-width: 768px) {
+    
     nav {
         flex-wrap: wrap;
         padding: 1rem 1.5rem;

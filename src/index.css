@@ -68,15 +68,23 @@ h1, h2, h3 {
 }
 
 @media (min-width: 1921px) {
-  .app-wrapper {
-    height: 100vh;
+  html, body {
     overflow: hidden;
+    height: 100vh;
+  }
+
+  main{
+  }
+  .app-wrapper {
+    max-height: 100vh;
+    overflow-y: hidden;
     display: flex;
     flex-direction: column;  /* navbar → scroll area → footer stacked vertically */
   }
 
   .scroll-container {
     flex: 1;                 /* fills all space between navbar and footer */
+    max-height: 88.5vh;      /* accounts for navbar and footer height */
     min-height: 0;           /* required for flex children to shrink correctly */
     display: flex;
     flex-direction: row;

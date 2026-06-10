@@ -38,3 +38,41 @@
 .footer-links a:hover {
     color: var(--color-accent-light);
 }
+
+@media (min-width: 1921px) {
+    .footer {
+        padding: 1rem;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        gap: 0;
+    }
+
+    .footer-copy::before,
+    .footer-links::before {
+        content: "|";
+        margin: 0 0.75rem;
+        color: var(--color-text-muted);
+    }
+
+    .footer-brand {
+        font-size: 1.5rem;
+    }
+
+    .footer-copy {
+        font-size: 1rem;
+    }
+
+    .footer-links a {
+        font-size: 1rem;
+    }
+    
+    .footer-links {
+        border-bottom: none;
+    }
+
+    .footer {
+        position: sticky;
+        bottom: 0;
+    }
+}
