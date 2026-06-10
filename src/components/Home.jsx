@@ -5,9 +5,11 @@ import Team from "./Team"
 import Projects from "./Projects"
 import Contact from "./Contact"
 import Footer from "./Footer"
-import Header from "./Header"
+import { defaultHeaderActions, useHeaderActions } from "./HeaderActionsContext"
 
 function Home() {
+  const { setHeaderActions } = useHeaderActions()
+
   // Reference to the scrolling container that holds the site sections
   const containerRef = useRef(null)
 
@@ -47,6 +49,17 @@ function Home() {
 
     return false
   }, [scrollToSection])
+
+  useEffect(() => {
+    setHeaderActions({
+      onBrandClick: () => scrollToSection(0),
+      onNavigateToSection: handleNavigateToSection,
+    })
+
+    return () => {
+      setHeaderActions(defaultHeaderActions)
+    }
+  }, [handleNavigateToSection, scrollToSection, setHeaderActions])
 
   // Programmatic scroll to the next/previous section.
   // `direction` is -1 for left, +1 for right.
@@ -124,10 +137,6 @@ function Home() {
 
   return (
     <div className="app-wrapper">
-      <Header
-        onBrandClick={() => scrollToSection(0)}
-        onNavigateToSection={handleNavigateToSection}
-      />
       <main id="main" role="main" aria-label="Primary content" ref={containerRef} className="scroll-container">
         <Hero />
         <About />

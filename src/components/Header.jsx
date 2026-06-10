@@ -18,9 +18,12 @@ function Header({ onBrandClick, onNavigateToSection }) {
             <nav aria-label="Main navigation">
                 <a
                     className="nav-brand"
-                    href="#hero"
-                    onClick={() => {
-                        onBrandClick?.();
+                    href="/#hero"
+                    onClick={(event) => {
+                        if (onBrandClick) {
+                            event.preventDefault();
+                            onBrandClick();
+                        }
                     }}
                 >
                     <img src="/cb-logo.png" alt="Cold Brew Code" className="nav-logo" />
@@ -33,9 +36,9 @@ function Header({ onBrandClick, onNavigateToSection }) {
                     {menuOpen ? "✕" : "☰"}
                 </button>
                 <ul className={`nav-links${menuOpen ? " open" : ""}`}>
-                    <li><a href="#about" className="nav-link" onClick={(event) => handleSectionClick(event, 1)}>About</a></li>
-                    <li><a href="#team" className="nav-link" onClick={(event) => handleSectionClick(event, 2)}>Team</a></li>
-                    <li><a href="#projects" className="nav-link" onClick={(event) => handleSectionClick(event, 3)}>Projects</a></li>
+                    <li><a href="/#about" className="nav-link" onClick={(event) => handleSectionClick(event, 1)}>About</a></li>
+                    <li><a href="/#team" className="nav-link" onClick={(event) => handleSectionClick(event, 2)}>Team</a></li>
+                    <li><a href="/#projects" className="nav-link" onClick={(event) => handleSectionClick(event, 3)}>Projects</a></li>
                 </ul>
             </nav>
         </header>
