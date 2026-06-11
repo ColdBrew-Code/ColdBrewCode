@@ -188,7 +188,7 @@ function Hero() {
       <div className="hero-content">
         <h1 id="hero-title" className="hero-title">Cold Brew Code</h1>
         <div className="hero-divider" />
-        <p className="hero-tagline">Freelance software development, brewed fresh.</p>
+        <p className="hero-tagline">Practical software solutions, brewed fresh.</p>
         <a href="#about" className="hero-cta" aria-label="Learn more about Cold Brew Code">Learn More</a>
       </div>
 
