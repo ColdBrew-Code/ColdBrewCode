@@ -136,7 +136,15 @@ function Home() {
   }, [checkArrows])
 
   return (
-    <div className="app-wrapper">
+    <>
+      <title>Cold Brew Code</title>
+      <meta name="description" content="Practical software solutions, brewed fresh. Cold Brew Code works with small businesses who want developers that actually invest in their vision." /> 
+      <meta name="keywords" content="software development, web applications, business applications, custom software" />
+      <meta property="og:title" content="Cold Brew Code" />
+      <meta property="og:description" content="Practical software solutions, brewed fresh. Cold Brew Code works with small businesses who want developers that actually invest in their vision." />
+      <meta property="og:type" content="website" />
+      <meta name="viewport" content="width=device-width, initial-scale=1" />
+      <div className="app-wrapper">
       <main id="main" role="main" aria-label="Primary content" ref={containerRef} className="scroll-container">
         <Hero />
         <About />
@@ -166,6 +174,7 @@ function Home() {
       </button>
       <Footer />
     </div>
+    </>
   )
 }
 
