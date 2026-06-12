@@ -14,7 +14,7 @@ function Header({ onBrandClick, onNavigateToSection }) {
     };
 
     return (
-        <header aria-role="banner" className="header">
+        <header role="banner" className="header">
             <nav aria-label="Main navigation">
                 <a
                     className="nav-brand"
