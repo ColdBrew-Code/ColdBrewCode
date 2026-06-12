@@ -186,7 +186,9 @@ function Hero() {
       </pre>
 
       <div className="hero-content">
-        <h1 id="hero-title" className="hero-title">Cold Brew Code</h1>
+        <h1 id="hero-title" className="hero-title">
+          <img className="hero-wordmark" src="/cb-wordmark-curved.svg" alt="Cold Brew Code" />
+        </h1>
         <div className="hero-divider" />
         <p className="hero-tagline">Practical software solutions, brewed fresh.</p>
         <a href="#about" className="hero-cta" aria-label="Learn more about Cold Brew Code">Learn More</a>
