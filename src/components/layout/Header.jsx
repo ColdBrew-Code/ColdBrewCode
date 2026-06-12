@@ -26,7 +26,7 @@ function Header({ onBrandClick, onNavigateToSection }) {
                         }
                     }}
                 >
-                    <img src="/cb-logo.png" alt="Cold Brew Code" className="nav-logo" />
+                    <img src="/cb-logo.svg" alt="Cold Brew Code" className="nav-logo" />
                 </a>
                 <button
                 className="nav-toggle"

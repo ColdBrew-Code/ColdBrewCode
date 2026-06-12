@@ -20,11 +20,12 @@ nav {
     display: flex;
     align-items: center;
     text-decoration: none;
+    padding: 0.25rem 0;
 }
 
 .nav-logo {
-    height: 80px;
-    width: auto;
+    height: 64px;
+    width: 64px;
     display: block;
 }
 
