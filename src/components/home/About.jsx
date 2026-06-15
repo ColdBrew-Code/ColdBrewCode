@@ -10,6 +10,7 @@ function About() {
                     <figure className="about-figure">
                         <div className="about-image-wrap">
                             <img src={aboutImg} alt="Team Photo at Pridefest" className="about-image"/>
+                            <img src="/chalk_pride_heart.png" alt="" aria-hidden="true" className="about-sticker"/>
                         </div>
                         <figcaption className="about-caption">Mina, Scarlett, Shanna, Laura, Geoffrey, and Nyx. Pridefest 2026.</figcaption>
                     </figure>

@@ -35,6 +35,17 @@
         0 0 12px 5px rgba(240, 236, 224, 0.08),
         inset 0 0 40px rgba(0, 0, 0, 0.75);
     pointer-events: none;
+    z-index: 1;
+}
+
+.about-sticker {
+    position: absolute;
+    top: -2.5rem;
+    left: -1rem;
+    width: 150px;
+    transform: rotate(-12deg);
+    pointer-events: none;
+    z-index: 2;
 }
 
 .about-image {
@@ -126,6 +137,11 @@
         flex-direction: column;
         align-items: flex-start;
         text-align: left;
+    }
+
+    .about-sticker {
+        width: 100px;
+        top: -1.75rem;
     }
 
 }
