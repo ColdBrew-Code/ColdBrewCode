@@ -1,12 +1,18 @@
 import "./Team.css";
+import shannaHeadshot from "../../assets/headshot_shanna_graves.webp";
+import geoffreyHeadshot from "../../assets/headshot_geoffrey_wortham.webp";
+import nyxHeadshot from "../../assets/headshot_nyx_strong.webp";
+import wilhelminaHeadshot from "../../assets/headshot_wilhelmina_vanderpool.webp";
+import scarlettHeadshot from "../../assets/headshot_scarlett_conyers.webp";
+import lauraHeadshot from "../../assets/headshot_laura_kirkpatrick.webp";
 
 const teamMembers = [
-    { name: "Shanna Graves", role: "Full Stack Developer", bio: "Shanna is a versatile full stack developer with a creative eye for web design. Their adaptive approach means every software solution is tailor-made to fill a need.", portfolio: "https://gravessoftware.dev"},
-    { name: "Geoffrey Wortham", role: "Frontend Developer", bio: "Geoffrey is a frontend specialist who thrives on pushing the limits of what interfaces can do. His drive to explore every corner of the craft means every project is not only beautiful but built to perform.", portfolio:"#"},
-    { name: "Nyx Strong", role: "Backend Developer", bio: "Nyx is a backend developer who loves to solve complex problems with elegant code. Her skills shine through on every project, ensuring that every solution is functional, efficient, and built to last.", portfolio:"https://github.com/NyxErinys"},
-    { name: "Wilhelmina Vanderpool", role: "Full Stack Developer", bio: "Mina is a full stack developer specializing in UI/UX and accessible design. She builds practical web applications, databases, and tools with a strong emphasis on usability, maintainability, and user experience. Her goal is to create software that not only works well but is intuitive and enjoyable to use.", portfolio:"https://minasaur.com/"},
-    { name: "Scarlett Conyers", role: "Graphic Designer", bio: "Scarlett is a prolific graphic designer with a passion for creating visually stunning and impactful designs. She is dedicated to delivering creative solutions that resonate with audiences.", portfolio:""},
-    { name: "Laura Kirkpatrick", role: "Backend Developer", bio: "Laura is a software/game developer with a passion for making quality products. She is currently working as a Back End Developer, but is able to fit anywhere in a project. She got her experience with software development projects such as basic websites, frameworks, APIs, mobile apps, video games, and much more.", portfolio:"https://github.com/Fruity-Patoootie"}
+    { name: "Shanna Graves", role: "Full Stack Developer", bio: "Shanna is a versatile full stack developer with a creative eye for web design. Their adaptive approach means every software solution is tailor-made to fill a need.", portfolio: "https://gravessoftware.dev", image: shannaHeadshot},
+    { name: "Geoffrey Wortham", role: "Frontend Developer", bio: "Geoffrey is a frontend specialist who thrives on pushing the limits of what interfaces can do. His drive to explore every corner of the craft means every project is not only beautiful but built to perform.", portfolio:"#", image: geoffreyHeadshot},
+    { name: "Nyx Strong", role: "Backend Developer", bio: "Nyx is a backend developer who loves to solve complex problems with elegant code. Her skills shine through on every project, ensuring that every solution is functional, efficient, and built to last.", portfolio:"https://github.com/NyxErinys", image: nyxHeadshot},
+    { name: "Wilhelmina Vanderpool", role: "Full Stack Developer", bio: "Mina is a full stack developer specializing in UI/UX and accessible design. She builds practical web applications, databases, and tools with a strong emphasis on usability, maintainability, and user experience. Her goal is to create software that not only works well but is intuitive and enjoyable to use.", portfolio:"https://minasaur.com/", image: wilhelminaHeadshot},
+    { name: "Scarlett Conyers", role: "Graphic Designer", bio: "Scarlett is a prolific graphic designer with a passion for creating visually stunning and impactful designs. She is dedicated to delivering creative solutions that resonate with audiences.", portfolio:"", image: scarlettHeadshot},
+    { name: "Laura Kirkpatrick", role: "Backend Developer", bio: "Laura is a software/game developer with a passion for making quality products. She is currently working as a Back End Developer, but is able to fit anywhere in a project. She got her experience with software development projects such as basic websites, frameworks, APIs, mobile apps, video games, and much more.", portfolio:"https://github.com/Fruity-Patoootie", image: lauraHeadshot}
 
 ];
 
@@ -18,6 +24,9 @@ function Team() {
             <div className="team-members">
                 {teamMembers.map((member, index) => (
                     <div key={index} className="team-member">
+                        <div className="team-member-image-wrap">
+                            <img src={member.image} alt={"Portrait of " + member.name} className="team-member-image" />
+                        </div>
                         <h3 className="team-member-name">{member.name}</h3>
                         <p className="team-member-role">{member.role}</p>
                         <p className="team-member-bio">{member.bio}</p>
